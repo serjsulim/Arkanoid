@@ -5,7 +5,7 @@ class Raketka:
 
     def __init__(self, screen):
         self.screen = screen
-        self.image = pygame.image.load('g2/image/raketka.png') # присвоюємо змінній файл з малюнком ракетки
+        self.image = pygame.image.load('image/raketka.png') # присвоюємо змінній файл з малюнком ракетки
                                     # подивишся щодо адреси малюнка
         self.rect = self.image.get_rect()  # зробили нашу ракетку як прямокутник
         self.screen_rect = screen.get_rect()   #  створюємо прямокутник за розміром екрану

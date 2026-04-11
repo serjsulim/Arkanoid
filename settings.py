@@ -14,4 +14,8 @@ WIDTH = 1000      # ширина вікна
 HEIGHT = 700     # довжина вікна
 FPS = 60         # кількість кадрів на секунду
 BG_COLOR = DARKGREY # колір фону 
-SPEED_RAKETKA = 3
+
+SPEED_RAKETKA = 3   # швидкість ракетки
+
+SPEED_BOLL_X = 1    # швидкість м'яча по х
+SPEED_BOLL_Y = 1    # швидкість м'яча по у
