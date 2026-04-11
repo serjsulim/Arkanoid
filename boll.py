@@ -1,4 +1,5 @@
 import pygame
+import controls
 from settings import * 
 
 class Boll:
@@ -25,7 +26,7 @@ class Boll:
             self.speed_y *= -1     # відбиття від ракетки
 
         if self.rect.bottom >= HEIGHT:   # програш, коли м'яч не відбили
-            game = False
+            controls.running = False
 
 
     def draw_boll(self):              # малюємо м'яч на екран

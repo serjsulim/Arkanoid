@@ -2,6 +2,8 @@ import pygame
 from settings import *
 from boll import Boll
 
+running = True     #    змінна, яка показує, коли зупинити гру
+
 def events(screen, raketka):              # обробка подій
     for event in pygame.event.get():             # для всіх подій що відбуваються у грі
         if event.type == pygame.QUIT:            # якщо натиснуто хрестик на вікні 
