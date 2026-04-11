@@ -6,7 +6,7 @@ class Boll:
     def __init__(self, screen):
         self.screen = screen
         self.rect = pygame.Rect(WIDTH//2, HEIGHT//2, RADIUS_BOLL, RADIUS_BOLL)
-        self.color = RED
+        self.color = BOLL_COLOR
         self.speed_x = SPEED_BOLL_X
         self.speed_y = SPEED_BOLL_Y
 
@@ -22,8 +22,10 @@ class Boll:
         if self.rect.top <= 0:           # відбиття від стелі
             self.speed_y *= -1 
 
-        if self.rect.bottom >= self.raketka.rect.top and (self.raketka.rect.left < self.rect.centerx < self.raketka.rect.right):
+        #if self.rect.bottom >= self.raketka.rect.top and (self.raketka.rect.left < self.rect.centerx < self.raketka.rect.right):
+        if self.rect.colliderect(self.raketka): # якщо м'яч доторкнувся до ракетки
             self.speed_y *= -1     # відбиття від ракетки
+            self.rect.centery -= RADIUS_BOLL
 
         if self.rect.bottom >= HEIGHT:   # програш, коли м'яч не відбили
             controls.running = False
