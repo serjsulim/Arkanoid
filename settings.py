@@ -19,3 +19,4 @@ SPEED_RAKETKA = 3   # швидкість ракетки
 
 SPEED_BOLL_X = 1    # швидкість м'яча по х
 SPEED_BOLL_Y = 1    # швидкість м'яча по у
+RADIUS_BOLL = 20    # діаметр м'яча
