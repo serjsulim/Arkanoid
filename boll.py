@@ -1,6 +1,7 @@
 import pygame
 import controls
 from settings import * 
+from random import choice
 
 class Boll:
     def __init__(self, screen):
@@ -10,6 +11,8 @@ class Boll:
         self.speed_x = SPEED_BOLL_X
         self.speed_y = SPEED_BOLL_Y
 
+    def speed_random(self):
+        return choice((-1.1, -1, -0.9, -1.1, -1, -0.9, -1.1, -1, -0.9, 0.9, 1, 1.1))
 
     def update(self, raketka):
         self.raketka = raketka
@@ -25,7 +28,8 @@ class Boll:
         #if self.rect.bottom >= self.raketka.rect.top and (self.raketka.rect.left < self.rect.centerx < self.raketka.rect.right):
         if self.rect.colliderect(self.raketka): # якщо м'яч доторкнувся до ракетки
             self.speed_y *= -1     # відбиття від ракетки
-            self.rect.centery -= RADIUS_BOLL
+            self.speed_x = SPEED_BOLL_X * self.speed_random()    # випадковий множник
+            self.rect.centery -= RADIUS_BOLL//2
 
         if self.rect.bottom >= HEIGHT:   # програш, коли м'яч не відбили
             controls.running = False
