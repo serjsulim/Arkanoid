@@ -14,7 +14,7 @@ class Brick:
         for brick in self.rect:
             if brick.colliderect(boll):
                 self.rect.remove(brick)
-                self.boll.speed_x = SPEED_BOLL_X * boll.speed_random()
+                self.boll.speed_x = self.boll.speed_x // abs(self.boll.speed_x) * SPEED_BOLL_X * boll.speed_random()
                 self.boll.speed_y *= -1
 
             pygame.draw.rect(screen, BRICK_COLOR, brick)
