@@ -24,7 +24,7 @@ SPEED_RAKETKA = 8  # швидкість ракетки
 SPEED_BOLL_X = 4    # швидкість м'яча по х
 SPEED_BOLL_Y = 5    # швидкість м'яча по у
 
-RADIUS_BOLL = 20    # діаметр м'яча
+RADIUS_BOLL = 15    # діаметр м'яча
 
 BRICK_WIDTH = 50    # ширина цеглини
 BRICK_HEIGHT = 20   # висота цеглини

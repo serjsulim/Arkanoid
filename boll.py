@@ -30,7 +30,7 @@ class Boll:
             self.speed_y *= -1     # відбиття від ракетки
             self.rect.centery -= RADIUS_BOLL//2
             self.speed_x = self.speed_x //abs(self.speed_x) * SPEED_BOLL_X * self.speed_random()    # випадковий множник
-            print(self.speed_x)
+            
             
 
         if self.rect.bottom >= HEIGHT:   # програш, коли м'яч не відбили
