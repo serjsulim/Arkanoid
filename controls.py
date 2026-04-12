@@ -1,6 +1,7 @@
 import pygame
 from settings import *
 from boll import Boll
+from brick import Brick
 
 running = True     #    змінна, яка показує, коли зупинити гру
 
@@ -20,8 +21,9 @@ def events(screen, raketka):              # обробка подій
             elif event.key == pygame.K_LEFT:       # якщо це вліво
                 raketka.mleft = False           # кажемо, що не натиснута a
                 
-def update(BG_COLOR, screen, raketka, boll):      # оновлення екрану
+def update(BG_COLOR, screen, raketka, boll, bricks):      # оновлення екрану
     screen.fill(BG_COLOR)                   # замалювати все вікно фоновим кольором
+    bricks.drow(screen, boll)
     boll.draw_boll()
     raketka.output()                        # намалювати ракетку
     pygame.display.flip()                   # промалювати кадр

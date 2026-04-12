@@ -14,13 +14,14 @@ def run():
     pygame.display.set_caption('Arkanoid')           # заголовок вікна
     raketka = Raketka(screen)                  # створюємо ракетку з рядка 3 імпорту з файла ракетка
     boll = Boll(screen)                              # створюємо м'яч
-    bricks = [Brick(x, y) for x in range (50, WIDTH - 50, 80) for y in range (50, 200, 30)]
+    bricks = Brick()
 
     while controls.running:
         controls.events(screen, raketka)           # відслідковуємо натискання клавіш для руху ракетки
         raketka.update_raketka()                   # оновити положення ракетки ()              
-        controls.update(BG_COLOR, screen, raketka, boll)
+        controls.update(BG_COLOR, screen, raketka, boll, bricks)
         boll.update(raketka)
+        
         clock.tick(FPS)  # вказуємо, щоб даний цикл while виконувався FPS раз на секунду
 
     pygame.quit()
