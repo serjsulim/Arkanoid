@@ -24,7 +24,7 @@ def run():
         
         clock.tick(FPS)  # вказуємо, щоб даний цикл while виконувався FPS раз на секунду
 
-    
+    pygame.quit()
     
 run()
-pygame.quit()
+
