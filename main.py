@@ -7,12 +7,13 @@ from boll import Boll
 from brick import Brick
 import statistik
 
+
+pygame.init()      # ініціюємо модуль pygame
+clock = pygame.time.Clock()  # змінна для створення FPS
+screen = pygame.display.set_mode((WIDTH, HEIGHT)) # створюємо вікно 
+pygame.display.set_caption('Arkanoid')           # заголовок вікна
+
 def run():            
-    
-    pygame.init()      # ініціюємо модуль pygame
-    clock = pygame.time.Clock()  # змінна для створення FPS
-    screen = pygame.display.set_mode((WIDTH, HEIGHT)) # створюємо вікно 
-    pygame.display.set_caption('Arkanoid')           # заголовок вікна
     raketka = Raketka(screen)                  # створюємо ракетку з рядка 3 імпорту з файла ракетка
     boll = Boll(screen)                              # створюємо м'яч
     bricks = Brick()
@@ -21,15 +22,14 @@ def run():
         controls.events(screen, raketka)           # відслідковуємо натискання клавіш для руху ракетки
         raketka.update_raketka()                   # відслідковуємо, куди рухати ракетку              
         controls.update(BG_COLOR, screen, raketka, boll, bricks) # відслідковуємо взаємодії
-        
-        
+                
         clock.tick(FPS)  # вказуємо, щоб даний цикл while виконувався FPS раз на секунду
 
     if controls.win:
         screen.fill(BG_COLOR)                   # замалювати все вікно фоновим кольором
         statistik.draw_message(screen, "YOU WON, NEXT LEVEL", TEXT_COLOR, 0 )
         pygame.display.flip()                   # промалювати кадр
-    input()
+        pygame.time.wait(10000)
     
 run()
 
