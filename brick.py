@@ -1,6 +1,7 @@
 import pygame
 from settings import *
 from boll import Boll
+import controls
 
 class Brick:
     def __init__(self):
@@ -16,5 +17,8 @@ class Brick:
                 self.rect.remove(brick)       # видаляємо цеглину і наступними рядками змінюємо рух м'яча
                 self.boll.speed_x = self.boll.speed_x // abs(self.boll.speed_x) * SPEED_BOLL_X * boll.speed_random()
                 self.boll.speed_y *= -1
+            if len(self.rect) == 0:           # якщо усі цеглини знищено
+                controls.running = False      # гра закінчена
+                controls.win = True           # виграш
 
             pygame.draw.rect(screen, BRICK_COLOR, brick)     # малюємо цеглини на екрані

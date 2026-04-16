@@ -4,6 +4,7 @@ from boll import Boll
 from brick import Brick
 
 running = True     #    змінна, яка показує, коли зупинити гру
+win = False        #    відслідковуємо виграш
 
 def events(screen, raketka):              # обробка подій
     for event in pygame.event.get():             # для всіх подій що відбуваються у грі
@@ -23,8 +24,9 @@ def events(screen, raketka):              # обробка подій
                 
 def update(BG_COLOR, screen, raketka, boll, bricks):      # оновлення екрану
     screen.fill(BG_COLOR)                   # замалювати все вікно фоновим кольором
-    bricks.drow(screen, boll)
-    boll.draw_boll()
+    bricks.drow(screen, boll)               # опрацьовуємо взаємодію цеглин з м'ячем
+    boll.draw_boll()                        # виводимо м'яч на екран
+    boll.update(raketka)                    # відслідковуємо взаємодію м'яча з ракеткою
     raketka.output()                        # намалювати ракетку
     pygame.display.flip()                   # промалювати кадр
   

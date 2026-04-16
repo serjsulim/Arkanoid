@@ -35,6 +35,7 @@ class Boll:
 
         if self.rect.bottom >= HEIGHT:   # програш, коли м'яч не відбили
             controls.running = False
+            controls.win = False
 
 
     def draw_boll(self):              # малюємо м'яч на екран

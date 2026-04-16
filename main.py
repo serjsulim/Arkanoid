@@ -5,6 +5,7 @@ from settings import *               # із файлу settings імпортує
 from raketka import Raketka          # імпортуємо з файлу raketka клас Raketka 
 from boll import Boll
 from brick import Brick
+import statistik
 
 def run():            
     
@@ -18,13 +19,18 @@ def run():
 
     while controls.running:
         controls.events(screen, raketka)           # відслідковуємо натискання клавіш для руху ракетки
-        raketka.update_raketka()                   # оновити положення ракетки ()              
-        controls.update(BG_COLOR, screen, raketka, boll, bricks)
-        boll.update(raketka)
+        raketka.update_raketka()                   # відслідковуємо, куди рухати ракетку              
+        controls.update(BG_COLOR, screen, raketka, boll, bricks) # відслідковуємо взаємодії
+        
         
         clock.tick(FPS)  # вказуємо, щоб даний цикл while виконувався FPS раз на секунду
 
-    pygame.quit()
+    if controls.win:
+        screen.fill(BG_COLOR)                   # замалювати все вікно фоновим кольором
+        statistik.draw_message(screen, "YOU WON, NEXT LEVEL", TEXT_COLOR, 0 )
+        pygame.display.flip()                   # промалювати кадр
+    input()
     
 run()
 
+pygame.quit()
