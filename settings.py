@@ -10,22 +10,22 @@ LIGHTGREY = (100, 100, 100)
 
 
 
-WIDTH = 200      # ширина вікна
+WIDTH = 900      # ширина вікна
 HEIGHT = 700     # висота вікна
 FPS = 60         # кількість кадрів на секунду
 
 BG_COLOR = DARKGREY # колір фону 
 BOLL_COLOR = RED    # колір м'яча
 BRICK_COLOR = GREEN # колір цеглини
+TEXT_COLOR = BLUE    # колір тексту
 
 SPEED_RAKETKA = 8  # швидкість ракетки
 
 SPEED_BOLL_X = 4    # швидкість м'яча по х
 SPEED_BOLL_Y = 5    # швидкість м'яча по у
 
-RADIUS_BOLL = 15    # діаметр м'яча
+RADIUS_BOLL = 15    # радіус м'яча
 
 BRICK_WIDTH = 50    # ширина цеглини
 BRICK_HEIGHT = 20   # висота цеглини
 
-TEXT_COLOR = BLUE
