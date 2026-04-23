@@ -10,7 +10,7 @@ LIGHTGREY = (100, 100, 100)
 
 
 
-WIDTH = 900      # ширина вікна
+WIDTH = 1000      # ширина вікна
 HEIGHT = 700     # висота вікна
 FPS = 60         # кількість кадрів на секунду
 
@@ -26,6 +26,6 @@ SPEED_BOLL_Y = 5    # швидкість м'яча по у
 
 RADIUS_BOLL = 15    # радіус м'яча
 
-BRICK_WIDTH = 50    # ширина цеглини
+BRICK_WIDTH = 70    # ширина цеглини
 BRICK_HEIGHT = 20   # висота цеглини
-
+BRICK_HOME = WIDTH % (BRICK_WIDTH + 10) // 2

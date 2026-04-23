@@ -38,7 +38,6 @@ class Boll:
             controls.win = False
 
 
-    def draw_boll(self):              # малюємо м'яч на екран
         pygame.draw.ellipse(self.screen, self.color, self.rect)
         
 

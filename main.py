@@ -1,5 +1,6 @@
 import pygame
 import os                            # Das Dateisystem
+import time
 import controls
 from settings import *               # із файлу settings імпортуємо усе
 from raketka import Raketka          # імпортуємо з файлу raketka клас Raketka 
@@ -13,7 +14,8 @@ clock = pygame.time.Clock()  # змінна для створення FPS
 screen = pygame.display.set_mode((WIDTH, HEIGHT)) # створюємо вікно 
 pygame.display.set_caption('Arkanoid')           # заголовок вікна
 
-def run():            
+def run():    
+    start_time = time.time()        
     raketka = Raketka(screen)                  # створюємо ракетку з рядка 3 імпорту з файла ракетка
     boll = Boll(screen)                              # створюємо м'яч
     bricks = Brick()
@@ -25,11 +27,16 @@ def run():
                 
         clock.tick(FPS)  # вказуємо, щоб даний цикл while виконувався FPS раз на секунду
 
+    end_time = time.time()
+    screen.fill(BG_COLOR)                   # замалювати все вікно фоновим кольором
     if controls.win:
-        screen.fill(BG_COLOR)                   # замалювати все вікно фоновим кольором
-        statistik.draw_message(screen, "YOU WON, NEXT LEVEL", TEXT_COLOR, 0 )
-        pygame.display.flip()                   # промалювати кадр
-        pygame.time.wait(10000)
+            statistik.draw_message(screen, "YOU WON, NEXT LEVEL", TEXT_COLOR, 0 )
+            
+    else:
+         statistik.draw_message(screen, "YOU LOSE", TEXT_COLOR, 0 )
+    statistik.draw_message(screen, str(int(end_time - start_time)) + ' sec', y_offset= 100)
+    pygame.display.flip()                   # промалювати кадр
+    pygame.time.wait(10000)
     
 run()
 
