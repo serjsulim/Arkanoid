@@ -13,12 +13,13 @@ pygame.init()      # ініціюємо модуль pygame
 clock = pygame.time.Clock()  # змінна для створення FPS
 screen = pygame.display.set_mode((WIDTH, HEIGHT)) # створюємо вікно 
 pygame.display.set_caption('Arkanoid')           # заголовок вікна
+level = 0
 
 def run():    
     start_time = time.time()        
     raketka = Raketka(screen)                  # створюємо ракетку з рядка 3 імпорту з файла ракетка
     boll = Boll(screen)                              # створюємо м'яч
-    bricks = Brick()
+    bricks = Brick(level)
 
     while controls.running:
         controls.events(screen, raketka)           # відслідковуємо натискання клавіш для руху ракетки
@@ -36,7 +37,7 @@ def run():
          statistik.draw_message(screen, "YOU LOSE", TEXT_COLOR, 0 )
     statistik.draw_message(screen, str(int(end_time - start_time)) + ' sec', y_offset= 100)
     pygame.display.flip()                   # промалювати кадр
-    pygame.time.wait(10000)
+    pygame.time.wait(5000)
     
 run()
 

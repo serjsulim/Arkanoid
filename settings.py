@@ -16,7 +16,7 @@ FPS = 60         # кількість кадрів на секунду
 
 BG_COLOR = DARKGREY # колір фону 
 BOLL_COLOR = RED    # колір м'яча
-BRICK_COLOR = GREEN # колір цеглини
+BRICK_COLOR = [BLACK, RED, GREEN, BLUE, YELLOW] # колір цеглини
 TEXT_COLOR = BLUE    # колір тексту
 
 SPEED_RAKETKA = 8  # швидкість ракетки
